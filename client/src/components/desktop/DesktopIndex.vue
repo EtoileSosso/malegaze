@@ -1,7 +1,10 @@
 <template>
     <div class="desktop-index">
         <h1>Male Gaze</h1>
-        <button class="desktop-index__start" @click="start">Commencer</button>
+        <h2>Une expérience cinématographique</h2>
+        <a class="desktop-index__start" @click="start">
+            <span>Démarrer l’expérience</span>
+        </a>
     </div>
 </template>
 
@@ -19,15 +22,57 @@
 </script>
 
 <style lang="scss" scoped>
-.desktop-index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    &__start {
-        background: white;
-        padding: 1rem;
+    .desktop-index {
+        background: #202020;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        h1 {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-weight: normal;
+            margin-bottom: 100px;
+            letter-spacing: 2px;
+        }
+
+        &__start {
+            padding: 1rem;
+            border: 2px solid white;
+            position: relative;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                z-index: 1;
+                color: white;
+                transition: all .5s;
+            }
+
+            &:hover {
+                &:after {
+                    height: 100%;
+                }
+                span {
+                    color: #202020;
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background: white;
+                transition: all .5s;
+            }
+        }
     }
-}
 </style>

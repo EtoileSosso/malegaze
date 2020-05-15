@@ -5,7 +5,8 @@
                     class="calibration-camera__button"
                     v-on:success="onOrientationRequestSuccess"
                     v-on:fail="onOrientationRequestFail"
-                    text="Continuer"
+                    text="Commencer"
+                    is-camera-button=true
             />
         </div>
         <!-- Camera view -->

@@ -1,7 +1,8 @@
 <template>
     <div class="calibration-screen">
-        <img class="calibration-screen__target" src="@/assets/svg/calibration-target.svg" />
-        <p class="calibration-screen__text">Visez l'écran avec votre téléphone.</p>
+        <img class="calibration-screen__target" src="@/assets/png/calibration.png" />
+        <p class="calibration-screen__text">Tenez votre téléphone à la verticale.<br/>
+            Visez l’écran pour le calibrer et commencer l’expérience.</p>
     </div>
 </template>
 
@@ -14,9 +15,15 @@
 <style lang="scss" scoped>
 
     .calibration-screen {
+        text-align: center;
+
         &__target {
-            background-color: white;
-            height: 40vh
+            // background-color: white;
+            width: 70%;
+        }
+
+        &__text {
+            margin-top: 60px;
         }
     }
 

@@ -1,5 +1,5 @@
 <template>
-    <button class="request-orientation" @click="request" type="button">{{ text }}</button>
+    <button class="request-orientation" @click="request" type="button" v-bind:class="isCameraButton ? 'camera' : ''">{{ text }}</button>
 </template>
 
 <script>
@@ -9,6 +9,10 @@
             text: {
                 type: String,
                 default: "Orientation Permission"
+            },
+            isCameraButton: {
+                type: Boolean,
+                default: false
             }
         },
         methods: {
@@ -49,6 +53,21 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    button {
+        background: white;
+        color: black;
+        letter-spacing: 5px;
 
+        &.camera {
+            text-transform: uppercase;
+            color: #FF4040;
+            border: 1px solid #FF4040;
+            border-radius: 0;
+            background: transparent;
+            bottom: 5rem;
+            right: 0;
+            left: calc(50% - 90px);
+        }
+    }
 </style>

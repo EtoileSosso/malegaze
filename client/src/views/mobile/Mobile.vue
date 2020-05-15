@@ -1,7 +1,6 @@
 <template>
     <div class="mobile">
         <p v-if="debug" class="mobile__debug">ID : {{ this.mobileId }}</p>
-
         <component :is="currentComponent" />
     </div>
 </template>
@@ -67,13 +66,12 @@
 
 <style lang="scss" scoped>
     .mobile {
+        background: #202020;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: 100vh;
         max-height: 100vh;
-        overflow: hidden;
+        overflow-x: hidden;
 
         &__debug {
             position: fixed;

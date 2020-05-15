@@ -16,8 +16,8 @@
 .popup {
     display: inline-flex;
     flex-direction: column;
-    background-color: white;
-    color: black;
+    background-color: #FF4040;
+    color: white;
     padding: 1rem;
 
     &__wrap {

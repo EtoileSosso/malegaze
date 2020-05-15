@@ -1,7 +1,8 @@
 <template>
     <div id="scene-container" class="scene-container" ref="sceneContainer">
         <CameraOverlay v-if="appState === 'cameraman'" />
-        <ActressComponent v-if="appState === 'actress' || appState === 'spectator'"/>
+        <ActressComponent v-if="appState === 'actress'"/>
+        <SpectatorComponent v-if="appState === 'spectator'"/>
     </div>
 </template>
 
@@ -9,11 +10,15 @@
     import ThreeEntryPoint from '../../js/three/ThreeEntryPoint';
     import { mapState } from 'vuex'
     import ActressComponent from "./actress/actressComponent";
-    import CameramanUI from "./cameraman/CameramanUI";
+    import SpectatorComponent from "./spectator/spectatorComponent";
+    // import CameramanUI from "./cameraman/CameramanUI";
 
     export default {
         name: 'DesktopScene',
-        components: {CameramanUI, ActressComponent},
+        components: {
+            SpectatorComponent,
+//CameramanUI,
+            ActressComponent},
         computed: {
             ...mapState('app', ['appState']),
         },
